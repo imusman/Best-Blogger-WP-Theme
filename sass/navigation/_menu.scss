@@ -1,0 +1,145 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+        margin: 10px 0 0 0;
+	ul {
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+                        background: #ccc;
+                        padding: 8px 12px;
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 250px;
+                                color: #000;
+			}
+
+			:hover > a,
+			.focus > a {
+                            display: block;
+                            background-color: #ccc !important;
+                            color: $color__interactive;
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		float: left;
+		position: relative;
+		&:hover > a,
+		&.focus > a {
+                    background-color: #8e1527;
+                    color: #fff;
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+                color: #fff;
+                font-family: $font__open_sans;
+                padding: 6px 10px;
+               
+	}
+        
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+        li.menu-item-has-children > a:after {
+            color: #fff;
+            content: ' ▾';
+            
+         }
+         li.current-menu-item a{
+            background-color: $color__interactive;
+         }
+         li.current-menu-item a:hover{
+         }
+}
+
+/* Small menu. */
+.menu-toggle{
+    background: $color__skin;
+    padding: 12px 8px;
+    color:#fff !important;
+    width: 100%;
+    margin: 20px 0 0 0;
+    border: none;
+}
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+.main-navigation.toggled ul{
+    width:100%;
+}
+.menu-toggle,
+.main-navigation.toggled ul a{
+    color: #000;
+   
+}
+
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
